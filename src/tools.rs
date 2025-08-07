@@ -1,4 +1,4 @@
-use rand::{distributions::Standard, Rng};
+use rand::{distr::StandardUniform, Rng};
 use rust_rsi::{
     RSI_SEALING_KEY_FLAGS_KEY, RSI_SEALING_KEY_FLAGS_REALM_ID, RSI_SEALING_KEY_FLAGS_RIM,
     RSI_SEALING_KEY_FLAGS_SVN,
@@ -38,8 +38,8 @@ pub(crate) fn hexdump(data: &[u8], line: usize, header: Option<&str>)
 
 pub(crate) fn random_data(len: usize) -> Vec<u8>
 {
-    let rng = rand::thread_rng();
-    rng.sample_iter(&Standard).take(len).collect()
+    let rng = rand::rng();
+    rng.sample_iter(StandardUniform).take(len).collect()
 }
 
 pub(crate) fn verify_print(token: &[u8], key: Option<&[u8]>) -> Result<(), rust_rsi::TokenError>
