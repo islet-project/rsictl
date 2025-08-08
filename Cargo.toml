@@ -14,3 +14,6 @@ rand = "*"
 
 [profile.release]
 strip = true
+
+[features]
+disable-challenge = [ "rust-rsi/disable-challenge" ]
