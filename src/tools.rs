@@ -1,4 +1,4 @@
-use rand::{distr::StandardUniform, Rng};
+use rand::{distr::StandardUniform, RngExt};
 use rust_rsi::{
     RSI_SEALING_KEY_FLAGS_KEY, RSI_SEALING_KEY_FLAGS_REALM_ID, RSI_SEALING_KEY_FLAGS_RIM,
     RSI_SEALING_KEY_FLAGS_SVN,
